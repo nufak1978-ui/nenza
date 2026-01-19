@@ -1,21 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ing. Lukáš Nenza, stavební činnost</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stavební firma s více než 20 lety zkušeností v Ostravě a Moravskoslezském kraji. Průmyslové objekty, SDK konstrukce, klempířské práce a další.">
+  <meta name="keywords" content="stavební firma Ostrava, stavební práce, SDK konstrukce, klempířské práce, zemní práce">
+  <title>Ing. Lukáš Nenza - Stavební činnost | Ostrava</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #222;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
       line-height: 1.6;
       background-color: #ffffff;
     }
 
     section {
-      padding: 64px 20px;
+      padding: 48px 20px;
       max-width: 1100px;
       margin: 0 auto;
     }
@@ -23,22 +29,29 @@
     h1, h2 {
       margin-bottom: 16px;
       font-weight: 600;
+      color: #222;
     }
 
     h1 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
+      line-height: 1.2;
     }
 
     h2 {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
+      border-bottom: 3px solid #ffd369;
+      display: inline-block;
+      padding-bottom: 8px;
     }
 
     p {
       max-width: 720px;
+      font-size: 1.05rem;
     }
 
+    /* HERO SEKCE */
     .hero {
-      background: url("https://images.unsplash.com/photo-1503387762-592deb58ef4e") center/cover no-repeat;
+      background: url("images/hero.jpg") center/cover no-repeat;
       color: #fff;
       padding: 120px 20px;
     }
@@ -51,152 +64,309 @@
       border-radius: 8px;
     }
 
+    .hero h1 {
+      color: #fff;
+    }
+
     .hero p {
       font-size: 1.1rem;
     }
 
     .contact-inline {
-      margin-top: 24px;
-      font-size: 1rem;
+      margin-top: 28px;
+      font-size: 1.05rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
     .contact-inline a {
       color: #ffd369;
       text-decoration: none;
       font-weight: 600;
+      transition: color 0.3s ease;
     }
 
+    .contact-inline a:hover {
+      color: #ffdd88;
+      text-decoration: underline;
+    }
+
+    /* O NÁS SEKCE */
+    .about {
+      background-color: #f9f9f9;
+    }
+
+    /* SLUŽBY SEKCE */
     .services ul {
       list-style: none;
       padding: 0;
-      margin-top: 24px;
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
     }
 
     .services li {
-      margin-bottom: 10px;
+      background: #f9f9f9;
+      padding: 16px 20px;
+      border-radius: 8px;
+      border-left: 4px solid #ffd369;
+      font-size: 1.05rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .services li:hover {
+      transform: translateX(5px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* PROJEKTY SEKCE */
+    .projects-section {
+      background-color: #f9f9f9;
     }
 
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
       margin-top: 32px;
+    }
+
+    .project-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     }
 
     .projects img {
       width: 100%;
-      border-radius: 6px;
+      height: 280px;
       object-fit: cover;
+      display: block;
     }
 
     .testimonial {
-      margin-top: 24px;
+      margin-top: 40px;
       font-style: italic;
+      background: #fff;
+      padding: 24px 28px;
+      border-left: 4px solid #ffd369;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      max-width: 720px;
     }
 
+    /* KONTAKT SEKCE */
     .contact {
-      background-color: #f6f6f6;
-      border-radius: 8px;
+      background: linear-gradient(135deg, #f6f6f6 0%, #e9e9e9 100%);
+      border-radius: 12px;
+      padding: 48px;
+    }
+
+    .contact-info {
+      font-size: 1.1rem;
+      line-height: 2;
+    }
+
+    .contact-info strong {
+      color: #222;
     }
 
     form {
-      margin-top: 24px;
-      max-width: 500px;
+      margin-top: 32px;
+      max-width: 600px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #333;
     }
 
     input, textarea {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 12px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
+      padding: 12px 16px;
+      margin-bottom: 18px;
+      border-radius: 6px;
+      border: 2px solid #ddd;
       font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #ffd369;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
     }
 
     button {
       background-color: #222;
       color: #fff;
-      padding: 12px 20px;
+      padding: 14px 32px;
       border: none;
-      border-radius: 4px;
-      font-size: 1rem;
+      border-radius: 6px;
+      font-size: 1.05rem;
+      font-weight: 600;
       cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     button:hover {
       background-color: #444;
+      transform: translateY(-2px);
     }
 
+    button:active {
+      transform: translateY(0);
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
-      padding: 24px 20px;
-      font-size: 0.9rem;
+      padding: 32px 20px;
+      font-size: 0.95rem;
       color: #666;
+      background-color: #f9f9f9;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    /* RESPONZIVITA */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .hero {
+        padding: 80px 20px 60px;
+      }
+
+      .hero-content {
+        padding: 32px 24px;
+      }
+
+      section {
+        padding: 32px 20px;
+      }
+
+      .contact {
+        padding: 32px 24px;
+      }
+
+      .contact-inline {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .services ul {
+        grid-template-columns: 1fr;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
+  <!-- HERO SEKCE -->
   <section class="hero">
     <div class="hero-content">
       <h1>Ing. Lukáš Nenza, stavební činnost</h1>
-      <p> Nabízíme více než 20 let zkušeností ve stavebnictví, profesionální a zároveň osobní přístup</p>
+      <p>Nabízíme více než 20 let zkušeností ve stavebnictví, profesionální a zároveň osobní přístup</p>
       <div class="contact-inline">
-        📞 <a href="tel:+420606796587">+420 606 796 587</a> &nbsp;|&nbsp;
-        ✉️ <a href="mailto:nenza@post.cz">nenza@post.cz</a>
+        <span>📞 <a href="tel:+420606796587">+420 606 796 587</a></span>
+        <span>✉️ <a href="mailto:nenza@post.cz">nenza@post.cz</a></span>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section>
+  <!-- O NÁS -->
+  <section class="about">
     <h2>O nás</h2>
     <p>
-      Ing. Lukáš Nenza, stavební činnost,  je menší stavební firma s více než 20 letou praxí v oblasti dodávek stavebních prací. Zaměřujeme se na profesionální přístup a kvalitu s osobním přístupem ke každé jednotlivé zakázce. 
+      Ing. Lukáš Nenza, stavební činnost, je menší stavební firma s více než 20 letou praxí v oblasti dodávek stavebních prací. Zaměřujeme se na profesionální přístup a kvalitu s osobním přístupem ke každé jednotlivé zakázce.
     </p>
   </section>
 
-  <!-- SERVICES -->
+  <!-- SLUŽBY -->
   <section class="services">
     <h2>Služby</h2>
     <ul>
-      <li>Apartment and house renovations</li>
-      <li>Masonry work</li>
-      <li>Bathrooms and tiling</li>
-      <li>Structural construction</li>
-      <li>Minor building modifications</li>
+      <li>Stavební práce pro průmyslové objekty</li>
+      <li>Zámečnické práce</li>
+      <li>SDK konstrukce</li>
+      <li>Klempířské práce</li>
+      <li>Střešní konstrukce</li>
+      <li>Vybavení TZB</li>
+      <li>Zednické práce</li>
+      <li>Zemní práce</li>
     </ul>
   </section>
 
-  <!-- PROJECTS -->
-  <section>
+  <!-- REALIZOVANÉ ZAKÁZKY -->
+  <section class="projects-section">
     <h2>Realizované zakázky</h2>
     <div class="projects">
-      <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a" alt="Renovated bathroom">
-      <img src="https://images.unsplash.com/photo-1597047084897-51e81819a499" alt="Interior renovation">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="House exterior">
+      <div class="project-item">
+        <img src="images/realizace1.jpg" alt="Renovace koupelny - stavební práce Ostrava">
+      </div>
+      <div class="project-item">
+        <img src="images/realizace2.jpg" alt="Renovace exteriéru - stavební firma Ostrava">
+      </div>
+      <div class="project-item">
+        <img src="images/realizace3.jpg" alt="Renovace okolí - stavební práce">
+      </div>
     </div>
     <div class="testimonial">
-      “Rychlá realizace,profesionálně odvedená práce se skvělou komunikací.” – Martin K.
+      „Rychlá realizace, profesionálně odvedená práce se skvělou komunikací." — Martin K.
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="contact">
-    <h2>Kontakty</h2>
-    <p>
-      📞 <strong>+420 606 796 587</strong><br>
-      ✉️ <strong>nenza@post.cz</strong><br>
-      📍 Ostrava a Moravskoslezský kraj
-    </p>
+  <!-- KONTAKT -->
+  <section>
+    <div class="contact">
+      <h2>Kontakt</h2>
+      <div class="contact-info">
+        📞 <strong>+420 606 796 587</strong><br>
+        ✉️ <strong>nenza@post.cz</strong><br>
+        📍 <strong>Ostrava a Moravskoslezský kraj</strong>
+      </div>
 
-    <form>
-      <input type="text" placeholder="Vaše jméno" vyžadováno>
-      <input type="email" placeholder="Váš email a telefon" vyžadováno>
-      <textarea rows="4" placeholder="Krátká zpráva"></textarea>
-      <button type="submit">Odesat zprávu</button>
-    </form>
+      <form action="#" method="post" aria-label="Kontaktní formulář">
+        <label for="name">Vaše jméno *</label>
+        <input type="text" id="name" name="name" required aria-required="true">
+        
+        <label for="email">Váš email *</label>
+        <input type="email" id="email" name="email" required aria-required="true">
+        
+        <label for="phone">Váš telefon</label>
+        <input type="tel" id="phone" name="phone">
+        
+        <label for="message">Krátká zpráva</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+        
+        <button type="submit">Odeslat zprávu</button>
+      </form>
+    </div>
   </section>
 
   <footer>
